@@ -37,6 +37,16 @@ function exercise04() {
   // Make sure to return the axios.get() method call
   //
   // return axios.get()...
+  return axios.get('https://jsonplaceholder.typicode.com/posts?_limit=6')
+  .then(
+    
+    function success(response){
+      $.each(response.data,function(elem){
+      $('.ex4-container').append('<div class="post"><p class="post__title">'+`${elem.title}`+'</p>><p>'+`${elem.body}`+'</p></div>')
+      })
+      
+    })
+  
+  
 }
-
 export default exercise04;
