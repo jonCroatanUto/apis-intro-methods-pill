@@ -14,6 +14,15 @@ import $ from "jquery";
  */
 function exercise01() {
   // Complete the code of the function
+  let xhl= new XMLHttpRequest
+  xhl.open('GET','https://jsonplaceholder.typicode.com/posts?_limit=20')
+  xhl.onload=function(){
+    $('#data').text(xhl.response);
+  }
+  xhl.onerror=function(){
+    alert('error');
+  }
+  xhl.send()
 }
 
 export default exercise01;
