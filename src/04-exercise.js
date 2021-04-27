@@ -41,12 +41,10 @@ function exercise04() {
   .then(
     
     function success(response){
-      $.each(response.data,function(elem){
+      $.each(response.data,function(index,elem){
       $('.ex4-container').append('<div class="post"><p class="post__title">'+`${elem.title}`+'</p>><p>'+`${elem.body}`+'</p></div>')
-      })
+      });
       
-    })
-  
-  
-}
+    });  
+};
 export default exercise04;
